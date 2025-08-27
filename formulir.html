@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Form Data Pribadi</title>
+  <!-- Import font Fredoka dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background: linear-gradient(135deg, #c9ffbf, #ffafbd);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #ff6f91;
+      font-weight: 600;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      text-align: left;
+      color: #333;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #ffb6c1;
+      border-radius: 12px;
+      font-size: 14px;
+      outline: none;
+      font-family: 'Fredoka', sans-serif;
+    }
+    input:focus {
+      border-color: #ff6f91;
+      box-shadow: 0px 0px 8px rgba(255,111,145,0.5);
+    }
+    button {
+      margin-top: 15px;
+      background: #ff6f91;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s;
+      font-family: 'Fredoka', sans-serif;
+    }
+    button:hover {
+      background: #ff3b6f;
+      transform: scale(1.05);
+    }
+    #hasil {
+      margin-top: 20px;
+      text-align: left;
+      background: #fff0f5;
+      padding: 15px;
+      border-radius: 15px;
+      border: 1px solid #ffc1cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FORMULIR PENDAFTARAN</h1>
+    <form id="FormAqiilah">
+     <label>Nama Lengkap :</label>
+     <input type="text" id="nama" placeholder="Ujang Kedu" required>
+     
+     <label>Tanggal Lahir :</label>
+     <input type="date" id="ttl" required>
+     
+     <label>Alamat :</label>
+     <input type="text" id="alamat" placeholder="Jl. Putus Cinta, Gg. Gagal Moveon" required>
+     
+     <label>Umur :</label>
+     <input type="number" id="umur" placeholder="1000" required>
+     
+     <label>Email :</label>
+     <input type="email" id="email" placeholder="aduhgalau@domain.com" required>
+     
+     <label>NIK :</label>
+     <input type="text" id="nik" placeholder="3172ehkamumalahmendua" required>
+     
+     <button type="submit">Kirim</button>
+    </form>
+    
+    <div id="hasil" style="display:none;"></div>
+  </div>
+  
+  <script>
+  const form = document.getElementById("FormAqiilah");
+  const hasil = document.getElementById("hasil");
+  
+  form.addEventListener("submit",function(e) {
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const ttl = document.getElementById("ttl").value;
+    const alamat = document.getElementById("alamat").value;
+    const umur = document.getElementById("umur").value;
+    const email = document.getElementById("email").value;
+    const nik = document.getElementById("nik").value;
+    
+    hasil.innerHTML = `
+  <h2>Data Pribadi</h2>
+  <p><b>Nama Lengkap :</b> ${nama}</p>
+  <p><b>Tanggal Lahir :</b> ${ttl}</p>
+  <p><b>Alamat :</b> ${alamat}</p>
+  <p><b>Umur :</b> ${umur} Tahun</p>
+  <p><b>Email :</b> ${email}</p>
+  <p><b>NIK :</b> ${nik}</p>
+`;
+  });
+  </script>
+</body>
+</html>
